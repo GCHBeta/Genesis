@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Genesis Chamber — The Doorway Into The Universe
+</title>
+
+
+<style>
+
+/* =====================================================
+   GENESIS CHAMBER v1.0
+
+   MASTER ARTIFACT
+
+   Single file edition
+
+===================================================== */
+
+
+:root {
+
+    --void:#020205;
+
+    --ice:
+    rgba(210,235,255,.92);
+
+    --soft:
+    rgba(210,235,255,.55);
+
+    --line:
+    rgba(220,240,255,.18);
+
+    --energy:
+    rgba(130,190,255,.9);
+
+}
+
+
+/* -------------------------------
+   RESET
+-------------------------------- */
+
+
+* {
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html,
+body {
+
+
+    width:100%;
+    height:100%;
+
+
+    overflow:hidden;
+
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        #101525,
+        #020205 70%
+    );
+
+
+    font-family:
+
+    Inter,
+    "SF Pro Display",
+    system-ui,
+    sans-serif;
+
+
+    color:white;
+
+}
+
+
+
+/* -------------------------------
+   WORLD
+-------------------------------- */
+
+
+#genesis {
+
+
+    position:relative;
+
+    width:100vw;
+
+    height:100vh;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+/* -------------------------------
+   ATMOSPHERE
+-------------------------------- */
+
+
+#particles {
+
+
+    position:absolute;
+
+    inset:0;
+
+
+    width:100%;
+
+    height:100%;
+
+
+    opacity:.5;
+
+
+}
+
+
+
+
+#atmosphere {
+
+    position:absolute;
+
+    inset:0;
+
+
+    pointer-events:none;
+
+
+    z-index:15;
+
+
+    background:
+
+
+    radial-gradient(
+
+        320px circle at var(--mx,50%) var(--my,50%),
+
+        rgba(180,220,255,.12),
+
+        rgba(120,180,255,.04) 25%,
+
+        transparent 65%
+
+    );
+
+
+    mix-blend-mode:
+
+    screen;
+
+
+    transition:
+
+    background .4s ease;
+
+
+}
+
+/*Cursor*/
+
+html,
+body,
+#genesis,
+.gate {
+    cursor:none;
+}
+
+#cursor-core {
+
+
+    position:absolute;
+
+
+    width:28px;
+
+    height:28px;
+
+
+    pointer-events:none;
+
+
+    z-index:1000;
+
+
+    transform:
+    translate(-50%,-50%);
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+}
+
+
+
+#cursor-core span {
+
+
+    font-family:
+
+    Georgia,
+    serif;
+
+
+    font-size:22px;
+
+
+    font-weight:400;
+
+
+    color:
+
+    rgba(245,250,255,.95);
+
+
+    text-shadow:
+
+
+    0 0 10px rgba(180,220,255,.9),
+
+
+    0 0 35px rgba(120,190,255,.8);
+
+
+
+    animation:
+
+    betaPulse 3s infinite ease-in-out;
+
+
+}
+
+
+
+
+#cursor-core::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:-10px;
+
+
+    border-radius:50%;
+
+
+    border:
+
+    1px solid rgba(180,220,255,.45);
+
+
+    animation:
+
+    cursorOrbit 5s linear infinite;
+
+
+}
+
+
+
+
+#cursor-core::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:-24px;
+
+
+    border-radius:50%;
+
+
+    background:
+
+
+    radial-gradient(
+
+        circle,
+
+        rgba(120,190,255,.18),
+
+        transparent 65%
+
+    );
+
+
+    filter:
+
+    blur(5px);
+
+
+}
+
+
+
+
+@keyframes betaPulse {
+
+
+    0%,
+    100% {
+
+        opacity:.65;
+
+        transform:scale(.9);
+
+    }
+
+
+    50% {
+
+        opacity:1;
+
+        transform:scale(1.15);
+
+    }
+
+
+}
+
+
+
+@keyframes cursorOrbit {
+
+
+    from {
+
+        transform:
+        rotate(0deg);
+
+    }
+
+
+    to {
+
+        transform:
+        rotate(360deg);
+
+    }
+
+}
+
+/* -------------------------------
+   GENESIS SIGIL
+-------------------------------- */
+
+
+#artifact {
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    z-index:3;
+
+
+}
+
+
+.beta-core {
+
+    width:220px;
+
+    height:220px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    position:relative;
+
+
+    animation:
+
+    breathe 5s infinite ease-in-out;
+
+}
+
+
+
+.beta-core::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    border-radius:50%;
+
+
+    border:
+
+    1px solid rgba(180,220,255,.35);
+
+
+    box-shadow:
+
+
+    0 0 60px rgba(120,190,255,.35);
+
+
+}
+
+
+
+.beta-core::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:30px;
+
+
+    border-radius:50%;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+}
+
+
+
+.beta-symbol {
+
+
+    font-family:
+
+    Georgia,
+    serif;
+
+
+    font-size:
+
+    120px;
+
+
+    font-weight:300;
+
+
+    color:white;
+
+
+    line-height:1;
+
+
+    text-shadow:
+
+
+    0 0 20px rgba(180,220,255,.9),
+
+
+    0 0 80px rgba(100,180,255,.5);
+
+
+}
+
+
+
+/* -------------------------------
+   CHAMBER ARCHITECTURE
+-------------------------------- */
+
+
+#architecture {
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    z-index:2;
+
+
+    opacity:0;
+
+
+    animation:
+
+    chamberReveal 4s forwards;
+
+
+    animation-delay:2s;
+
+
+}
+
+
+
+@keyframes chamberReveal {
+
+
+    to {
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+.orbit {
+
+
+    position:absolute;
+
+
+    left:50%;
+
+    top:50%;
+
+
+    transform:
+
+    translate(-50%,-50%);
+
+
+    border-radius:50%;
+
+
+    border:
+
+    1px solid var(--line);
+
+
+}
+
+
+
+.orbit.one {
+
+
+    width:80vw;
+
+    height:80vw;
+
+
+}
+
+
+
+.orbit.two {
+
+
+    width:55vw;
+
+    height:55vw;
+
+
+}
+
+
+
+/* -------------------------------
+   MONUMENT
+-------------------------------- */
+
+
+#monument {
+
+    position:absolute;
+
+    z-index:10;
+
+    top:8%;
+
+    left:0;
+
+    right:0;
+
+    text-align:center;
+
+    opacity:0;
+
+    transform:
+    translateY(-20px);
+
+    animation:
+
+    monumentReveal 2s forwards;
+
+    animation-delay:3.5s;
+
+}
+
+
+
+@keyframes monumentReveal {
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:
+        translateY(0);
+
+
+    }
+
+}
+
+
+
+#monument h1 {
+
+
+    opacity:0;
+
+
+    transform:
+    translateY(-15px);
+
+
+    animation:
+
+    titleReveal 1.8s forwards;
+
+
+    animation-delay:3.8s;
+
+
+    font-size:
+
+    clamp(
+        2rem,
+        5vw,
+        4rem
+    );
+
+
+    font-weight:300;
+
+
+    letter-spacing:.7em;
+
+
+    text-indent:.7em;
+
+
+}
+
+
+
+@keyframes titleReveal {
+
+
+    to {
+
+        opacity:.95;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+
+#monument p {
+
+
+    margin-top:25px;
+
+
+    color:var(--soft);
+
+
+    letter-spacing:.25em;
+
+
+    font-size:
+
+    clamp(
+        .8rem,
+        1.5vw,
+        1.1rem
+    );
+
+
+    opacity:0;
+
+
+    transform:
+    translateY(15px);
+
+
+    animation:
+
+    subtitleReveal 1.8s forwards;
+
+
+    animation-delay:4.8s;
+
+
+}
+
+
+
+@keyframes subtitleReveal {
+
+
+    to {
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+
+
+
+
+/* -------------------------------
+   GATES
+-------------------------------- */
+
+
+#gates {
+
+
+    position:absolute;
+
+
+    z-index:20;
+
+
+    left:0;
+
+    right:0;
+
+
+    bottom:7%;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:18px;
+
+
+}
+
+
+
+.gate {
+
+    position:relative;
+
+    width:190px;
+    height:260px;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    text-decoration:none;
+
+    color:white;
+
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        rgba(255,255,255,.08),
+
+        rgba(255,255,255,.015)
+
+    );
+
+
+    border:
+
+    1px solid rgba(220,240,255,.18);
+
+
+    clip-path:
+
+    polygon(
+
+        50% 0%,
+
+        100% 12%,
+
+        100% 88%,
+
+        50% 100%,
+
+        0% 88%,
+
+        0% 12%
+
+    );
+
+
+    animation:
+
+    gateReveal 1.5s forwards;
+
+
+    animation-delay:7s;
+
+
+    transition:
+
+    transform .6s ease,
+
+    filter .6s ease;
+
+}
+
+
+
+
+.gate:nth-child(2){
+
+    animation-delay:7.15s;
+
+}
+
+
+.gate:nth-child(3){
+
+    animation-delay:7.3s;
+
+}
+
+
+
+.gate:hover {
+
+
+    transform:
+
+    translateY(-12px);
+
+
+    border-color:
+
+    rgba(220,240,255,.5);
+
+
+    box-shadow:
+
+
+    0 0 60px
+
+    rgba(120,190,255,.25);
+
+
+}
+
+
+
+@keyframes gateReveal {
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+}
+
+
+
+.gate span {
+
+
+    font-family:
+
+    Georgia,
+    serif;
+
+
+    font-size:46px;
+
+
+    font-weight:300;
+
+
+    color:
+
+    rgba(245,250,255,.95);
+
+
+    margin-bottom:22px;
+
+
+    text-shadow:
+
+
+    0 0 15px rgba(180,220,255,.9),
+
+
+    0 0 45px rgba(120,190,255,.5);
+
+
+    animation:
+
+    betaGatePulse 4s infinite ease-in-out;
+
+
+}
+
+
+
+@keyframes betaGatePulse {
+
+
+    0%,
+    100% {
+
+        opacity:.7;
+
+        transform:scale(.95);
+
+    }
+
+
+    50% {
+
+        opacity:1;
+
+        transform:scale(1.08);
+
+    }
+
+
+}
+
+
+
+.gate h2 {
+
+
+    font-size:12px;
+
+
+    font-weight:400;
+
+
+    letter-spacing:.3em;
+
+
+}
+
+
+
+.gate p {
+
+
+    margin-top:15px;
+
+
+    font-size:10px;
+
+
+    color:var(--soft);
+
+
+    letter-spacing:.2em;
+
+
+}
+
+
+
+/* -------------------------------
+   MOBILE
+-------------------------------- */
+
+
+@media(max-width:900px){
+
+
+    #gates {
+
+
+        flex-wrap:wrap;
+
+
+        bottom:3%;
+
+
+    }
+
+
+    .gate {
+
+
+        width:145px;
+
+        height:170px;
+
+
+    }
+
+
+}
+
+
+
+
+
+</style>
+
+    <link rel="icon"
+      type="image/svg+xml"
+      href="favicon.svg">
+
+</head>
+
+
+
+<body>
+
+
+
+<div id="genesis">
+
+
+<canvas id="particles"></canvas>
+
+
+<div id="atmosphere"></div>
+
+<div id="cursor-core">
+
+    <span>β</span>
+
+</div>
+
+<div id="cursor-trail"></div>
+
+<div id="architecture">
+
+
+<div class="orbit one"></div>
+
+<div class="orbit two"></div>
+
+
+</div>
+
+
+
+
+
+<div id="artifact">
+
+
+<div class="beta-core">
+
+    <div class="beta-symbol">
+        β
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div id="monument">
+
+
+<h1>
+GENESIS
+</h1>
+
+
+<p>
+THE GIGA ACCUMULATION EVENT
+</p>
+
+
+</div>
+
+
+
+
+
+<div id="gates">
+
+
+<a
+
+class="gate"
+
+href="https://gchbeta.github.io/GCA/"
+
+target="_blank">
+
+
+<span>
+β
+</span>
+
+
+<h2>
+GENESIS
+</h2>
+
+
+<p>
+DISCOVER
+</p>
+
+
+</a>
+
+
+
+
+
+<a
+
+class="gate"
+
+href="https://app.uniswap.org/swap?chain=base&inputCurrency=NATIVE&outputCurrency=0x6d0b8eb75e9d6735cc301c3a6e82adee43590b07&value=0.0060&field=input"
+
+target="_blank">
+
+
+<span>
+β
+</span>
+
+
+<h2>
+ASCEND
+</h2>
+
+
+<p>
+ACCUMULATE
+</p>
+
+
+</a>
+
+
+
+
+
+<a
+
+class="gate"
+
+href="https://discord.gg/bB5WRbemFR"
+
+target="_blank">
+
+
+<span>
+β
+</span>
+
+
+<h2>
+CITADEL
+</h2>
+
+
+<p>
+COMMUNITY
+</p>
+
+
+</a>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+/* ==========================================
+   GENESIS ATMOSPHERE ENGINE
+========================================== */
+
+
+const canvas =
+document.getElementById(
+"particles"
+);
+
+
+const ctx =
+canvas.getContext(
+"2d"
+);
+
+
+
+let w,h;
+
+
+
+function resize(){
+
+
+w =
+canvas.width =
+window.innerWidth;
+
+
+h =
+canvas.height =
+window.innerHeight;
+
+
+}
+
+
+
+resize();
+
+
+window.addEventListener(
+"resize",
+resize
+);
+
+
+
+
+
+const stars =
+Array.from(
+{length:180},
+()=>({
+
+x:Math.random()*w,
+
+y:Math.random()*h,
+
+r:Math.random()*1.5+.2,
+
+speed:Math.random()*.25+.05,
+
+alpha:Math.random()*.6+.2
+
+
+})
+);
+
+
+
+
+
+function render(){
+
+
+ctx.clearRect(
+0,
+0,
+w,
+h
+);
+
+
+
+stars.forEach(
+s=>{
+
+
+s.y -= s.speed;
+
+
+
+if(s.y < -10){
+
+s.y=h+10;
+
+s.x=Math.random()*w;
+
+}
+
+
+
+ctx.beginPath();
+
+
+ctx.fillStyle=
+`rgba(220,235,255,${s.alpha})`;
+
+
+ctx.arc(
+s.x,
+s.y,
+s.r,
+0,
+Math.PI*2
+);
+
+
+ctx.fill();
+
+
+
+});
+
+
+requestAnimationFrame(
+render
+);
+
+
+}
+
+
+
+render();
+
+
+
+
+
+/* ==========================================
+   CURSOR RESONANCE
+========================================== */
+
+
+const cursor =
+document.getElementById(
+"cursor-core"
+);
+
+
+let cursorX=0;
+let cursorY=0;
+
+let targetX=0;
+let targetY=0;
+
+
+
+window.addEventListener(
+"mousemove",
+e=>{
+
+
+targetX=e.clientX;
+
+targetY=e.clientY;
+
+
+
+document.documentElement.style
+.setProperty(
+"--mx",
+`${targetX}px`
+);
+
+
+
+document.documentElement.style
+.setProperty(
+"--my",
+`${targetY}px`
+);
+
+
+});
+
+
+
+
+function animateCursor(){
+
+
+cursorX +=
+(targetX-cursorX)*0.12;
+
+
+cursorY +=
+(targetY-cursorY)*0.12;
+
+
+
+cursor.style.transform=
+
+`
+translate(
+${cursorX}px,
+${cursorY}px
+)
+translate(-50%,-50%)
+`;
+
+
+
+requestAnimationFrame(
+animateCursor
+);
+
+
+}
+
+
+animateCursor();
+
+const trail =
+document.getElementById("cursor-trail");
+
+
+let trailX = 0;
+let trailY = 0;
+
+
+function animateTrail(){
+
+    trailX += (cursorX-trailX)*0.05;
+    trailY += (cursorY-trailY)*0.05;
+
+
+    trail.style.transform =
+    `
+    translate(
+        ${trailX}px,
+        ${trailY}px
+    )
+    translate(-50%,-50%)
+    `;
+
+
+    requestAnimationFrame(
+        animateTrail
+    );
+
+}
+
+
+animateTrail();
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
