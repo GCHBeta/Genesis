@@ -1,2 +1,2 @@
-# genesis
-The genesis event
+# Genesis
+The genesis accumulation event
